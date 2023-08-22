@@ -8,7 +8,7 @@ namespace CAInheritance
         {
             Employee emp = new Developer (1, "issam", 190, 10, true);
 
-            System.Console.WriteLine(emp);
+            Console.WriteLine(emp);
         }
     }
 }
