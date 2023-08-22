@@ -6,20 +6,9 @@ namespace CAInheritance
     {
         static void Main(string[] args)
         {
-            var sc = new Subclass();
-            Console.WriteLine(sc.value);
-            Console.ReadKey();
-        }
+            Employee emp = new Developer (1, "issam", 190, 10, true);
 
-        class Baseclass
-        {
-            public int value = 10;
-        }
-
-        class Subclass: Baseclass
-        {
-            public int value = 20; 
+            System.Console.WriteLine(emp);
         }
     }
-
 }

@@ -31,7 +31,9 @@ namespace CAInheritance
 
         private decimal CalculateBaseSalary()
         {
-            return  LoggedHours * Wage ;
+            decimal regularHours = Math.Min(LoggedHours, MinimumLoggedHours);
+
+            return  regularHours * Wage ;
         }
         private decimal CalculateOverTime()
         {
@@ -41,7 +43,7 @@ namespace CAInheritance
         }
         public override string ToString()
         {
-            var type = GetType().ToString().Replace("CAInheritance.", ""); 
+            var type = GetType().ToString().Replace("CAInheritance.", "");
             return $"{type}"+
                    $"\nId: {Id}" +
                    $"\nName: {Name}" +
@@ -49,10 +51,10 @@ namespace CAInheritance
                    $"\nWage: {Wage} $/hr" +
                    $"\nBase Salary: ${Math.Round(CalculateBaseSalary(),2):N0}" +
                    $"\nOvertime: ${Math.Round(CalculateOverTime(), 2):N0}";
-                    
+
 
         }
     }
 
-    
+
 }
